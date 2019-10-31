@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="EclipseCodeFormatterProjectSettings">
+    <option name="selectedGlobalProfile">
+      <Settings>
+        <option name="formatter" value="ECLIPSE" />
+        <option name="id" value="1483426800156" />
+        <option name="name" value="default" />
+        <option name="pathToConfigFileJS" value="$PROJECT_DIR$/../RV24/trunk/build-config/src/main/resources/eclipse/RuV_Formatter_JavaScript.xml" />
+        <option name="pathToConfigFileJava" value="$PROJECT_DIR$/../RV24/build-config/src/main/resources/eclipse/RuV_Formatter.xml" />
+        <option name="selectedJavaProfile" value="R+V Web" />
+        <option name="selectedJavaScriptProfile" value="R+V Web" />
+      </Settings>
+    </option>
+  </component>
+</project>
