@@ -11,11 +11,11 @@ var appRouter = function (app) {
     });
 
     app.get("/user-contributions", function (req, res) {
-        res.status(200).send({message: 'Welcome to user-contributions'});
+        res.status(200).send(core.userContributions());
     });
 
     app.get("/pod-locations", function (req, res) {
-        res.status(200).send({message: 'Welcome pod-locations'});
+        res.status(200).send(core.allData());
     });
 
     app.post("/add", function (req, res) {
@@ -23,8 +23,10 @@ var appRouter = function (app) {
         var team = req.body.team;
         var user = req.body.user;
         var weight = req.body.weight;
-        core.add(team, user,  weight)
-        res.status(200).send({message: 'Welcome add'});
+        var node = "";
+        var podid = "";
+        core.add(team, user,  weight, node, podid)
+        res.status(200).send({message: 'OK'});
     });
 }
 

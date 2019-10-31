@@ -1,12 +1,14 @@
 var dataQueue = []
 var podData = []
 
-function add(team, user, weight) {
+function add(team, user, weight, node, podid) {
     dataQueue.push({
         timestamp: new Date(),
         team,
         user,
-        weight
+        weight,
+        node,
+        podid
     })
     console.log(dataQueue)
 }
@@ -14,7 +16,7 @@ function add(team, user, weight) {
 function teamStatus(){
     cleanDataQueue();
     var result ={};
-    dataQueue.forEach(function ({team,user,weight,timestamp}) {
+    dataQueue.forEach(function ({team,weight}) {
         if (result[team]){
             result[team] += weight; 
         }else{
@@ -32,4 +34,29 @@ function cleanDataQueue(){
   })
 }
 
-module.exports = {add,teamStatus};
+function userContributions(){
+    cleanDataQueue();
+    var result = {};
+    dataQueue.forEach(function ({team,user,weight}) {
+        if (result[team]){
+            if(result[team][user]){
+                result[team][user] += weight; 
+            }else{
+                result[team][user] = weight;
+            }
+        }else{
+            var userA ={}
+            userA[user] = weight
+            result[team] = userA;
+        }
+    })
+    console.log(result)
+    return result;
+}
+
+function allData(){
+    cleanDataQueue();
+    return dataQueue;
+}
+
+module.exports = {add,teamStatus,userContributions,allData};
