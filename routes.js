@@ -3,7 +3,7 @@ var core = require("./core.js")
 var appRouter = function (app) {
     
     app.get("/", function (req, res) {
-        res.status(200).send({message: 'Welcome to our restful API'});
+        res.status(200).send({message: 'Welcome to our restful API\n /team-status\n /user-contributions\n /pod-locations'});
     });
 
     app.get("/team-status", function (req, res) {
@@ -19,7 +19,7 @@ var appRouter = function (app) {
     });
 
     app.post("/add", function (req, res) {
-       // console.log(req)
+        console.log(req)
         var team = req.body.team;
         var user = req.body.user;
         var weight = req.body.weight;
