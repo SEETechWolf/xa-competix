@@ -23,8 +23,8 @@ var appRouter = function (app) {
         var team = req.body.team;
         var user = req.body.user;
         var weight = req.body.weight;
-        var node = "";
-        var podid = "";
+        var node = req.socket.remoteAddress;
+        var podid = req.body.podid;
         core.add(team, user,  weight, node, podid)
         res.status(200).send({message: 'OK'});
     });
